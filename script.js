@@ -1,4 +1,5 @@
 gsap.registerPlugin(ScrollTrigger);
+document.documentElement.classList.add('is-loading');
 
 /* ==========================================================================
     SCROLL PROGRESS & NAVBAR COLOR TRIGGER
@@ -128,6 +129,7 @@ window.addEventListener('load', () => {
     const loaderScreen = document.getElementById('loading-screen');
 
     if (!loaderLine || !loaderScreen) {
+        document.documentElement.classList.remove('is-loading');
         triggerHeroEntrance();
         return;
     }
@@ -146,6 +148,8 @@ window.addEventListener('load', () => {
         delay: 0.3,
         ease: 'power2.inOut',
         onComplete: () => {
+            window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+            document.documentElement.classList.remove('is-loading');
             loaderScreen.style.display = 'none';
             triggerHeroEntrance();
         }

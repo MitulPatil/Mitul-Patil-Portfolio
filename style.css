@@ -41,6 +41,10 @@ html {
     -moz-osx-font-smoothing: grayscale;
 }
 
+html.is-loading {
+    overflow: hidden;
+}
+
 body {
     overflow-x: hidden;
     background-color: var(--bg-cream);
