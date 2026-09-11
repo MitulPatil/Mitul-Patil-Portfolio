@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mitul Patil — Full Stack Developer & AI Integration</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- GSAP & ScrollTrigger CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Scroll Progress Indicator -->
+  <div id="scroll-progress"></div>
+
+  <!-- Custom Cursor -->
+  <div id="cursor"></div>
+
+  <!-- Loading Screen Overlay -->
+  <div id="loading-screen">
+    <span class="loader-name">Mitul Patil</span>
+    <div class="loader-line" id="loader-line"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <div class="nav-brand-wrap">
+        <a href="#hero" class="nav-brand">Mitul Patil</a>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#work" class="nav-link">Work</a></li>
+        <li><a href="#contact" class="nav-contact">Contact</a></li>
+      </ul>
+
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav-panel">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-nav-panel" id="mobile-nav-panel" aria-hidden="true">
+    <ul class="mobile-nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+
+  <main>
+    <!-- HERO SECTION (PAUL ROOSTER STYLE) -->
+    <section id="hero">
+      <div class="hero-canvas" id="hero-canvas">
+        
+        <!-- Centered Dot Grid Texture -->
+        <div class="hero-dot-grid"></div>
+
+        <div class="hero-inner-content">
+          
+          <!-- Pill Tag at top -->
+          <div class="hero-pill-badge" id="hero-badge">
+            FULL STACK &amp; AI INTEGRATION
+          </div>
+
+          <!-- Main Heading: Hi, [Photo Card] I am Mitul! -->
+          <h1 class="hero-main-title" id="hero-title">
+            <span class="hero-title-text">Hi,</span>
+            
+            <!-- Tilted Sticker Photo Card -->
+            <div class="hero-photo-card" id="hero-photo">
+              <div class="hero-photo-svg-avatar">
+                <img class="hero-photo-img" src="./assets/home_image.webp" alt="">
+              </div>
+            </div>
+
+            <span class="hero-title-text">I am Mitul!</span>
+          </h1>
+
+          <!-- Subtitle / Mission Statement -->
+          <p class="hero-subtitle-desc" id="hero-desc">
+            I build production software that looks good, functions intuitively, and is engineered with real understanding from first principles.
+          </p>
+
+          <!-- Smooth Scroll Down Arrow Button -->
+          <a href="#about" class="hero-scroll-btn" id="hero-scroll" aria-label="Scroll down to About section">
+            <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="section">
+      <div class="container">
+        
+        <div class="about-shell">
+          <div class="about-intro">
+            <div class="about-copy" id="about-left-col">
+              <span class="section-label">// ABOUT ME</span>
+              <h4 class="about-heading" id="about-heading">I build AI-powered products that actually work in production.</h4>
+              <p>Not demos. Not prototypes with a disclaimer. Full systems — with authentication, real databases, streaming interfaces, and AI pipelines and autonomous agents that handle real user data under real constraints.</p>
+              <p>I work across the entire stack. The database design, the API, the frontend, the LLM integration — I own all of it. That means when something breaks I know exactly where to look. And when a feature needs to change I understand every layer well enough to make the right call.</p>
+              <p>I own my code completely — every layer, every decision.</p>
+              <a class="resume-btn" href="./assets/Mitul_Patil_Resume.pdf" download>Resume</a>
+            </div>
+            <div class="about-profile-placeholder" id="about-right-col" aria-label="Profile image placeholder">
+              <img src="./assets/about_image.webp" alt="">
+            </div>
+          </div>
+        </div>
+
+        <!-- Tech Stack -->
+        <div class="tech-stack-container" id="tech-stack-wrap">
+          <div class="tech-stack-heading-row">
+            <h3 class="tech-stack-title">// Tech Stack</h3>
+            <span class="tech-stack-note">Hover to explore</span>
+          </div>
+
+          <div class="tech-stack-rows">
+            <div class="tech-stack-row">
+              <div class="tech-category"><span class="tech-category-accent"></span>FRONTEND</div>
+              <div class="tech-tags-grid">
+                <span class="tech-tag">React.js</span>
+                <span class="tech-tag">React Router</span>
+                <span class="tech-tag">Tailwind CSS</span>
+                <span class="tech-tag">React Hook Form</span>
+                <span class="tech-tag">React Native</span>
+              </div>
+            </div>
+
+            <div class="tech-stack-row">
+              <div class="tech-category"><span class="tech-category-accent"></span>BACKEND</div>
+              <div class="tech-tags-grid">
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">Express.js</span>
+                <span class="tech-tag">Socket.IO</span>
+                <span class="tech-tag">JWT</span>
+                <span class="tech-tag">Zod</span>
+                <span class="tech-tag">Bcrypt</span>
+                <span class="tech-tag">Multer</span>
+              </div>
+            </div>
+
+            <div class="tech-stack-row">
+              <div class="tech-category"><span class="tech-category-accent"></span>DATABASE</div>
+              <div class="tech-tags-grid">
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">pgvector</span>
+                <span class="tech-tag">MongoDB</span>
+                <span class="tech-tag">Supabase</span>
+              </div>
+            </div>
+
+            <div class="tech-stack-row tech-stack-row-ai">
+              <div class="tech-category"><span class="tech-category-accent"></span>AI / LLM</div>
+              <div class="tech-tags-grid">
+                <span class="tech-tag tag-ai">Gemini SDK</span>
+                <span class="tech-tag tag-ai">RAG Pipeline</span>
+                <span class="tech-tag tag-ai">LangGraph JS</span>
+                <span class="tech-tag tag-ai">Embeddings</span>
+                <span class="tech-tag tag-ai">SSE Streaming</span>
+                <span class="tech-tag tag-ai">Prompt Engineering</span>
+                <span class="tech-tag tag-ai">Tavily API</span>
+              </div>
+            </div>
+
+            <div class="tech-stack-row">
+              <div class="tech-category"><span class="tech-category-accent"></span>DEVOPS</div>
+              <div class="tech-tags-grid">
+                <span class="tech-tag">GitHub Actions</span>
+                <span class="tech-tag">Docker</span>
+                <span class="tech-tag">Vercel</span>
+                <span class="tech-tag">Railway</span>
+              </div>
+            </div>
+
+            <div class="tech-stack-row">
+              <div class="tech-category"><span class="tech-category-accent"></span>LANGUAGES</div>
+              <div class="tech-tags-grid">
+                <span class="tech-tag">JavaScript ES6+</span>
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Java</span>
+                <span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">SQL</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- WORK / PROJECTS SECTION -->
+    <section id="work" class="section">
+      <div class="container">
+        
+        <span class="section-label">// WORK</span>
+        <h2 class="section-heading work-heading">Things I have built.</h2>
+
+        <div class="projects-wrapper">
+          
+          <!-- Project 01: DocMind -->
+          <article class="project-card">
+            <div class="project-left">
+              <span class="project-num">01</span>
+              <h3 class="project-title">DocMind - RAG Document Intelligence App</h3>
+              <p class="project-tagline">Chat with any PDF using a RAG pipeline built from scratch.</p>
+              
+              <div class="project-tags">
+                <span class="project-tag-pill">React</span>
+                <span class="project-tag-pill">Node.js</span>
+                <span class="project-tag-pill">PostgreSQL</span>
+                <span class="project-tag-pill">pgvector</span>
+                <span class="project-tag-pill">Gemini SDK</span>
+                <span class="project-tag-pill">multer</span>
+                <span class="project-tag-pill">supabase</span>
+                <span class="project-tag-pill">Hybrid Retrieval</span>
+              </div>
+
+              <div class="project-bullets">
+                <p class="project-bullet">— Built a full RAG pipeline from scratch — PDF parsing, semantic chunking, embedding generation, pgvector cosine similarity search, and streamed LLM responses token-by-token via SSE to a React frontend.</p>
+                <p class="project-bullet">— Implemented hybrid search (semantic + keyword), source citations, and per-user document isolation with PostgreSQL row-level security and prompt injection defense.</p>
+                <p class="project-bullet">— Processed large PDFs asynchronously; logged Gemini API token costs per user; Perform testing in Postman; deployed on Vercel + Railway + supabase.</p>
+              </div>
+
+              <div class="project-links">
+                <a href="https://dom-mind-rag-chat-bot.vercel.app/" class="project-link">Live ↗</a>
+                <a href="https://github.com/MitulPatil/DomMind-RAG-ChatBot" target="_blank" rel="noopener noreferrer" class="project-link">GitHub ↗</a>
+              </div>
+            </div>
+
+            <div class="project-right">
+              <div class="project-dark-panel">
+                <img class="project-panel-image" src="./assets/docmind.webp" alt="">
+              </div>
+              
+            </div>
+          </article>
+
+          <!-- Project 02: ResearchBot -->
+          <article class="project-card">
+            <div class="project-left">
+              <span class="project-num">02</span>
+              <h3 class="project-title">ResearchBot - Autonomous AI Research Agent</h3>
+              <p class="project-tagline">Autonomous agent that plans, searches the web and writes structured reports.</p>
+              
+              <div class="project-tags">
+                <span class="project-tag-pill">React</span>
+                <span class="project-tag-pill">Node.js</span>
+                <span class="project-tag-pill">LangGraph JS</span>
+                <span class="project-tag-pill">Gemini SDK</span>
+                <span class="project-tag-pill">Tavily API</span>
+                <span class="project-tag-pill">LangSmith</span>
+              </div>
+
+              <div class="project-bullets">
+                <p class="project-bullet">— Built an autonomous research agent LangGraph JS state machine — plan, web search (Tavily), URL fetch, synthesize, and save nodes with conditional edges and human-in-the-loop approval, with LangSmith tracing for workflow observability.</p>
+                <p class="project-bullet">— It improves productivity by reducing manual research, structured JSON output with Gemini responseSchema, and LangSmith evaluation to monitor and improve agent response quality</p>
+                <p class="project-bullet">— Implemented real-time step streaming to React via SSE, added prompt-injection defenses for AI agents, and optimized PostgreSQL queries using EXPLAIN ANALYZE.</p>
+              </div>
+
+              <div class="project-links">
+                <!-- <a href="#work" class="project-link">Live ↗</a> -->
+                <a href="https://github.com/MitulPatil/ResearchBot" target="_blank" rel="noopener noreferrer" class="project-link">GitHub ↗</a>
+              </div>
+            </div>
+
+            <div class="project-right">
+              <div class="project-dark-panel">
+                <img class="project-panel-image" src="./assets/research_agent.webp" alt="">
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 03: Greenlit -->
+          <article class="project-card">
+            <div class="project-left">
+              <span class="project-num">03</span>
+              <h3 class="project-title">Greenlit - AI-Powered Freelancer Decision Assistant</h3>
+              <p class="project-tagline">AI-powered decision assistant for Indian freelancers.</p>
+              
+              <div class="project-tags">
+                <span class="project-tag-pill">React.js</span>
+                <span class="project-tag-pill">Node.js</span>
+                <span class="project-tag-pill">PostgreSQL</span>
+                <span class="project-tag-pill">NeonDB</span>
+                <span class="project-tag-pill">LLM API</span>
+                <span class="project-tag-pill">TipTap</span>
+                <span class="project-tag-pill">JWT</span>
+              </div>
+
+              <div class="project-bullets">
+                <p class="project-bullet">— Automated Proposal, Scope and Risk document generation using LLM, reducing creation time by 70%</p>
+                <p class="project-bullet">— TipTap rich-text editor with 8-second auto-save and one-click PDF and DOCX export</p>
+                <p class="project-bullet">— JWT-authenticated Discovery Portal with client Q&A workflow and shareable project workspace</p>
+              </div>
+
+              <div class="project-links">
+                <!-- <a href="#work" class="project-link">Live ↗</a> -->
+                <a href="https://github.com/MitulPatil/ScopeSeal" target="_blank" rel="noopener noreferrer" class="project-link">GitHub ↗</a>
+              </div>
+            </div>
+
+            <div class="project-right">
+              <div class="project-dark-panel">
+                <img class="project-panel-image" src="./assets/Greenlit.webp" alt="">
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 04: Mr. Dhobi -->
+          <article class="project-card">
+            <div class="project-left">
+              <span class="project-num">04</span>
+              <h3 class="project-title">Mr. Dhobi - On-Demand Laundry Mobile App </h3>
+              <p class="project-tagline">Live on-demand laundry app on the Google Play Store.</p>
+              
+              <div class="project-tags">
+                <span class="project-tag-pill">React Native</span>
+                <span class="project-tag-pill">TypeScript</span>
+                <span class="project-tag-pill">Firebase</span>
+                <span class="project-tag-pill">Razorpay</span>
+              </div>
+
+              <div class="project-bullets">
+                <p class="project-bullet">— Shipped live Android app on Google Play Store with OTP authentication, push notifications, Razorpay payments</p>
+                <p class="project-bullet">— Role-based admin panel with 10+ operational modules managing orders, delivery and user roles</p>
+                <p class="project-bullet">— Companion business website scored 98/100 on Lighthouse performance audit</p>
+              </div>
+
+              <div class="project-links">
+                <a href="https://play.google.com/store/apps/details?id=com.omkumar_78.mrdhobi" class="project-link">Live (playstore) ↗</a>
+                <a href="https://www.mrdhobi.in/" class="project-link">Live (website) ↗</a>
+                <a href="https://github.com/Omkumar7Parmar/Mr.Dhobi-otp-payment" target="_blank" rel="noopener noreferrer" class="project-link">GitHub ↗</a>
+              </div>
+            </div>
+
+            <div class="project-right">
+              <div class="project-dark-panel">
+                <img class="project-panel-image" src="./assets/mrdhobi.webp" alt="">
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EXPERIENCE SECTION -->
+    <section id="experience" class="section">
+      <div class="container">
+        
+        <span class="section-label">// EXPERIENCE</span>
+
+        <div class="experience-card" id="experience-card">
+          <span class="experience-bg-year">2026</span>
+          
+          <div class="experience-card-inner">
+            <h3 class="experience-company">Exotic Infotech</h3>
+            <div class="experience-role">Full Stack Developer Intern</div>
+            <div class="experience-duration">Jan 2026 - June 2026 · Vadodara, Gujarat</div>
+
+            <div class="experience-divider"></div>
+
+            <div class="experience-bullets">
+              <p class="experience-bullet">— Built 10+ pixel-perfect React components from Figma, cutting UI review cycles by ~30%</p>
+              <p class="experience-bullet">— Delivered 3 full-stack MERN modules (authentication, dashboard, orders), reducing admin effort by ~40%</p>
+              <p class="experience-bullet">— Integrated 5+ REST APIs with Axios and centralized error handling, dropped failed requests under 2%</p>
+              <p class="experience-bullet">— Optimized Redux state management across 4 key user flows</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION (DARK) -->
+    <section id="contact" class="section">
+      <div class="container">
+        
+        <div class="contact-grid">
+          
+          <!-- Left Column -->
+          <div class="contact-left">
+            <span class="section-label contact-label">// CONTACT</span>
+            <h2 class="contact-heading" id="contact-heading">Let's build something real.</h2>
+            <p class="contact-body">Looking for full stack and AI integration roles. If you are building something real, let's talk.</p>
+
+            <div class="contact-email-box">
+              <span class="email-label">DIRECT EMAIL</span>
+              <div class="email-row">
+                <span class="email-text" id="email-address">patilmitul1911@gmail.com</span>
+                <button type="button" class="copy-btn" id="copy-email-btn">copy</button>
+              </div>
+            </div>
+
+            <div class="contact-socials">
+              <a href="https://www.linkedin.com/in/mitul-patil-471456256/" class="social-link">LinkedIn ↗</a>
+              <a href="https://github.com/MitulPatil" class="social-link">GitHub ↗</a>
+            </div>
+          </div>
+
+          <!-- Right Column Form -->
+          <div class="contact-right">
+            <form class="contact-form" id="contact-form">
+              
+              <div class="form-group">
+                <label class="form-label" for="user-name">NAME</label>
+                <input class="form-input" type="text" id="user-name" name="name" required placeholder="Mitul Patil" />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="user-email">EMAIL</label>
+                <input class="form-input" type="email" id="user-email" name="email" required placeholder="mitul@example.com" />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="service-type">SERVICE</label>
+                <select class="form-input" id="service-type" name="service" required>
+                  <option value="" selected disabled>Select a service</option>
+                  <option value="website">Website</option>
+                  <option value="mobile">Mobile</option>
+                  <option value="web+mobile">Web + Mobile</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="user-message">PROJECT DESCRIPTION</label>
+                <textarea class="form-textarea" id="user-message" name="message" rows="5" required placeholder="Tell me about your project..."></textarea>
+              </div>
+
+              <button type="submit" class="form-submit-btn">Send Message</button>
+              <div class="form-status-msg" id="form-status-msg">Message sent ✓</div>
+
+            </form>
+          </div>
+
+        </div>
+
+        <!-- Footer -->
+        <footer class="contact-footer">
+          <span class="footer-text">Mitul Patil © 2026</span>
+          <span class="footer-text">Built in Vadodara, India</span>
+        </footer>
+
+      </div>
+    </section>
+  </main>
+  
+  <!-- JAVASCRIPT LOGIC -->
+  <script src="./script.js"></script>
+</body>
+</html>
